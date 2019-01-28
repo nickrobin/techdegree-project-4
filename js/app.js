@@ -10,7 +10,11 @@
 
    //extra credit for keydown
    $(document).keydown((e) => {
-     game.handleInteraction(e.key);
+     //check that the keypress is a letter so it doesn't reduce hearts when I press number
+     const alpha = new RegExp("[a-z]");
+     if (alpha.test(e.key)) {
+      game.handleInteraction(e.key);
+      }
    });
 
 
